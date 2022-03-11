@@ -12,8 +12,7 @@ public record HashtagDTO
     [JsonPropertyName("name")]
     public string Name { get; set; }
 
-    // [JsonPropertyName("post_id")]
-    // public int PostId { get; set; }
+   
 
     [JsonPropertyName("posts")]
     public List<PostsDTO> Posts { get; set; }
@@ -31,8 +30,7 @@ public record HashtagCreateDTO
     [Required]
     public string Name { get; set; }
 
-    // [JsonPropertyName("post_id")]
-    // public int PostId { get; set; }
+   
 
 }
 
@@ -43,7 +41,6 @@ public record HashtagUpdateDTO
     [Required]
     public string Name { get; set; }
 
-    //  [JsonPropertyName("post_id")]
-    // public int PostId { get; set; }
+  
 
 }
