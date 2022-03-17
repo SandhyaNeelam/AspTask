@@ -56,7 +56,7 @@ public class PostsController : ControllerBase
     }
 
     [HttpPut("{id}")]
-    public async Task<ActionResult> UpdatePosts([FromRoute] int id, [FromBody] PostCreateDTO Data)
+    public async Task<ActionResult> UpdatePosts([FromRoute] int id, [FromBody] PostUpdateDTO Data)
     {
         var existing = await _posts.GetById(id);
         if (existing is null)
@@ -65,7 +65,7 @@ public class PostsController : ControllerBase
         var toUpdateItem = existing with
         {
             TypeOfPost = Data.TypeOfPost.Trim(),
-            UserId = Data.UserId,
+            // UserId = Data.UserId
         };
         await _posts.Update(toUpdateItem);
 

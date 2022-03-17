@@ -15,8 +15,8 @@ public record PostsDTO
     [JsonPropertyName("user_id")]
     public int UserId { get; set; }
 
-    [JsonPropertyName("created_at")]
-    public DateTimeOffset CreatedAt { get; set; }
+    // [JsonPropertyName("created_at")]
+    // public DateTimeOffset CreatedAt { get; set; }
 
 
     [JsonPropertyName("likes")]
@@ -36,8 +36,8 @@ public record PostCreateDTO
     [Required]
     public string TypeOfPost { get; set; }
 
-    [JsonPropertyName("created_at")]
-    public DateTimeOffset CreatedAt { get; set; }
+    // [JsonPropertyName("created_at")]
+    // public DateTimeOffset CreatedAt { get; set; }
 
 
     [JsonPropertyName("user_id")]
@@ -52,7 +52,7 @@ public record PostUpdateDTO
     public string TypeOfPost { get; set; }
 
 
-    [JsonPropertyName("user_id")]
-    public int UserId { get; set; }
+    // [JsonPropertyName("user_id")]
+    // public int UserId { get; set; }
 
 }

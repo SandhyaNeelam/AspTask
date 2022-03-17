@@ -13,7 +13,7 @@ public record Posts
 
     public int UserId { get; set; }
 
-   public DateTimeOffset CreatedAt{ get; set; }
+//    public DateTimeOffset CreatedAt{ get; set; }
 
 
    public PostsDTO asDto{
@@ -21,8 +21,8 @@ public record Posts
             return new PostsDTO{
                 Id = Id,
                 TypeOfPost= TypeOfPost,
-                UserId = UserId,
-                CreatedAt = CreatedAt
+                UserId = UserId
+                // CreatedAt = CreatedAt
                 
             };
         }

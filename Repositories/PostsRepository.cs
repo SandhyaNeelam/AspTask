@@ -68,7 +68,7 @@ public class PostRepository : BaseRepository, IPostsRepository
 
     public async Task Update(Posts Item)
     {
-        var updateQuery = $@"UPDATE posts SET type_of_post, useer_id = @UserId = @TypeOfPost WHERE id=@Id";
+        var updateQuery = $@"UPDATE posts SET type_of_post= @TypeOfPost WHERE id=@Id";
         using (var connection = NewConnection)
             await connection.ExecuteAsync(updateQuery, Item);
     }
