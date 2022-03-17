@@ -12,7 +12,6 @@ public record HashtagDTO
     [JsonPropertyName("name")]
     public string Name { get; set; }
 
-   
 
     [JsonPropertyName("posts")]
     public List<PostsDTO> Posts { get; set; }

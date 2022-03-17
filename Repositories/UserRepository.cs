@@ -48,8 +48,7 @@ public class UserRepository : BaseRepository, IUserRepository
 
     public async Task<bool> Update(User Item)
     {
-        var updateQuery = $@"UPDATE public.userdetails
-	SET  name=@Name,  date_of_birth=@DateOfBirth, mobile=@Mobile, email=@Email, gender=@Gender WHERE id =@Id";
+        var updateQuery = $@"UPDATE public.userdetails SET  name=@Name, mobile=@Mobile, email=@Email WHERE id =@Id";
 
         using (var connection = NewConnection)
         {
@@ -61,8 +60,7 @@ public class UserRepository : BaseRepository, IUserRepository
 
     public async Task<bool> Delete(int Id)
     {
-        var deleteQuery = $@"DELETE FROM public.userdetails
-	WHERE id = @Id";
+        var deleteQuery = $@"DELETE FROM public.userdetails WHERE id = @Id";
 
         using (var connection = NewConnection)
         {
@@ -75,7 +73,7 @@ public class UserRepository : BaseRepository, IUserRepository
 
     public async Task<User> GetById(int Id)
     {
-        var getIdQuery = $@"SELECT * FROM public.userdetails WHERE id=@userid;";
+        var getIdQuery = $@"SELECT * FROM public.userdetails WHERE id = @userid;";
         using (var connection = NewConnection)
             return await connection.QuerySingleOrDefaultAsync<User>(getIdQuery, new { userid = Id });
     }

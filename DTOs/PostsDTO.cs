@@ -14,12 +14,12 @@ public record PostsDTO
 
     [JsonPropertyName("user_id")]
     public int UserId { get; set; }
-    
-   [JsonPropertyName("created_at")]
-   public DateTimeOffset CreatedAt{ get; set; }
+
+    [JsonPropertyName("created_at")]
+    public DateTimeOffset CreatedAt { get; set; }
 
 
-   [JsonPropertyName("likes")]
+    [JsonPropertyName("likes")]
     public List<LikesDTO> Likes { get; set; }
 
 
@@ -37,7 +37,6 @@ public record PostCreateDTO
     public string TypeOfPost { get; set; }
 
     [JsonPropertyName("created_at")]
-    [Required]
     public DateTimeOffset CreatedAt { get; set; }
 
 

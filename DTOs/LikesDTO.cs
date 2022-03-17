@@ -35,6 +35,5 @@ public record LikesCreateDTO
     public int PostId { get; set; }
 
     [JsonPropertyName("created_at")]
-    [Required]
     public DateTimeOffset CreatedAt { get; set; }
 }

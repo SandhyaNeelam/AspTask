@@ -9,7 +9,6 @@ public interface ILikesRepository
 
     Task<Likes> GetById(int Id);
     Task<Likes> Create(Likes Item);
-    Task Update(Likes Item);
     Task Delete(int Id);
     Task<List<LikesDTO>> GetAllForPosts(int Id);
 }
@@ -54,12 +53,6 @@ public class LikesRepository : BaseRepository, ILikesRepository
             return await connection.QuerySingleOrDefaultAsync<Likes>(getQuery, new { Id });
     }
 
-    public async Task Update(Likes Item)
-    {
-        var updateQuery = $@"UPDATE likes SET user_id=@UserId, post_id=@PostId, created_at=@CreatedAt WHERE id=@Id";
-        using (var connection = NewConnection)
-            await connection.ExecuteAsync(updateQuery, Item);
-    }
 
 
 }

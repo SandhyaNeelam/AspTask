@@ -76,16 +76,16 @@ public class HashtagController : ControllerBase
     [HttpGet("{id}")]
     public async Task<ActionResult<Hashtag>> GetHashtagByID([FromRoute] int id)
     {
-        var hashtag= await _hashtag.GetById(id);
-        if(hashtag is  null)
-        return NotFound("No Hashtag found with given id");
+        var hashtag = await _hashtag.GetById(id);
+        if (hashtag is null)
+            return NotFound("No Hashtag found with given id");
 
-        var dto= hashtag.asDto;
+        var dto = hashtag.asDto;
         dto.Posts = await _posts.GetAllForHashtag(hashtag.Id);
 
         return Ok(dto);
 
-    } 
+    }
 
 
 }
